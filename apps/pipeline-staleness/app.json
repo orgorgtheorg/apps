@@ -1,0 +1,29 @@
+{
+  "appId": "pipeline-staleness",
+  "version": 1,
+  "name": "Pipeline staleness sweep",
+  "tagline": "Never lose a deal because nobody followed up.",
+  "who": "An agency founder doing sales in the gaps between delivery work.",
+  "how": "Monday cron lists deals with no activity in 10 days, each with a context-aware nudge email already drafted and ready to send.",
+  "category": "growth",
+  "accent": "oklch(0.55 0.13 240)",
+  "connectors": [
+    {
+      "id": "gmail",
+      "label": "Gmail",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 3,
+    "max": 6
+  },
+  "adds": {
+    "crons": [
+      "Staleness sweep (Mon 8am)"
+    ],
+    "apps": [
+      "Deal board"
+    ]
+  }
+}

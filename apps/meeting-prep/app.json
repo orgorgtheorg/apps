@@ -1,0 +1,32 @@
+{
+  "appId": "meeting-prep",
+  "version": 1,
+  "name": "Meeting prep briefs",
+  "tagline": "Walk into every external meeting already briefed.",
+  "who": "A founder with a calendar full of external meetings.",
+  "how": "Night-before cron reads tomorrow's calendar and writes a half-page brief per external attendee: company, recent news, and your last interactions.",
+  "category": "operations",
+  "accent": "oklch(0.55 0.13 200)",
+  "connectors": [
+    {
+      "id": "google-calendar",
+      "label": "Google Calendar",
+      "required": true
+    },
+    {
+      "id": "gmail",
+      "label": "Gmail",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 2,
+    "max": 5
+  },
+  "adds": {
+    "crons": [
+      "Prep pass (nightly)"
+    ],
+    "apps": []
+  }
+}

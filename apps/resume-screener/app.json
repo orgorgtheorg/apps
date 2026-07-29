@@ -1,0 +1,25 @@
+{
+  "appId": "resume-screener",
+  "version": 1,
+  "name": "Resume screener",
+  "tagline": "Turn a pile of applicants into a ranked, explained shortlist.",
+  "who": "An owner hiring without a recruiter — 80 Indeed applicants for one dispatcher role.",
+  "how": "Drop resumes into Files with a JD; each gets scored into a sheet (must-haves met, red flags, a suggested phone-screen question), with advance/reject emails drafted.",
+  "category": "operations",
+  "accent": "oklch(0.55 0.13 90)",
+  "connectors": [
+    {
+      "id": "gmail",
+      "label": "Gmail",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 1,
+    "max": 3
+  },
+  "adds": {
+    "crons": [],
+    "apps": []
+  }
+}

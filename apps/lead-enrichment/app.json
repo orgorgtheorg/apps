@@ -1,0 +1,27 @@
+{
+  "appId": "lead-enrichment",
+  "version": 1,
+  "name": "Lead list enrichment",
+  "tagline": "A raw list of names becomes researched, scored prospects.",
+  "who": "A sales consultant handed a 200-row conference attendee CSV.",
+  "how": "Browser research fills in company, title, recent news, and a fit score per row; results land on the deal board, not in a dead spreadsheet.",
+  "category": "growth",
+  "accent": "oklch(0.55 0.13 240)",
+  "connectors": [
+    {
+      "id": "browser",
+      "label": "Shared browser sign-in",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 2,
+    "max": 4
+  },
+  "adds": {
+    "crons": [],
+    "apps": [
+      "Deal board"
+    ]
+  }
+}

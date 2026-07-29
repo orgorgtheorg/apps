@@ -1,0 +1,32 @@
+{
+  "appId": "bookkeeping-tidy",
+  "version": 1,
+  "name": "Pre-close bookkeeping tidy",
+  "tagline": "Month-end close becomes review, not archaeology.",
+  "who": "An owner whose accountant bills hourly for cleanup.",
+  "how": "Weekly cron categorizes new transactions and flags missing receipts by matching inbox attachments to charges.",
+  "category": "operations",
+  "accent": "oklch(0.50 0.13 320)",
+  "connectors": [
+    {
+      "id": "bank",
+      "label": "Bank (Mercury / Brex)",
+      "required": true
+    },
+    {
+      "id": "gmail",
+      "label": "Gmail",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 3,
+    "max": 6
+  },
+  "adds": {
+    "crons": [
+      "Tidy pass (weekly)"
+    ],
+    "apps": []
+  }
+}

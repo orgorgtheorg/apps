@@ -1,0 +1,29 @@
+{
+  "appId": "candidate-tracker",
+  "version": 1,
+  "name": "Candidate tracker",
+  "tagline": "A lightweight hiring pipeline that nags before candidates go cold.",
+  "who": "A hiring manager juggling six candidates across three stages for two weeks.",
+  "how": "Pipeline board per role — each card holds the resume, screen notes, and next action. A cron flags candidates untouched for 3+ days, because silence is how small companies lose good people.",
+  "category": "operations",
+  "accent": "oklch(0.55 0.13 90)",
+  "connectors": [
+    {
+      "id": "gmail",
+      "label": "Gmail",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 4,
+    "max": 8
+  },
+  "adds": {
+    "crons": [
+      "Staleness check (daily)"
+    ],
+    "apps": [
+      "Candidate board"
+    ]
+  }
+}

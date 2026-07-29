@@ -1,0 +1,27 @@
+{
+  "appId": "gbp-maintainer",
+  "version": 1,
+  "name": "Google Business Profile maintainer",
+  "tagline": "The highest-leverage local-SEO surface, actually maintained.",
+  "who": "Any local business — the profile is universally neglected.",
+  "how": "Weekly post, hours and holiday updates, fresh photos, and answered Q&A on your Google Business Profile via the shared browser.",
+  "category": "growth",
+  "accent": "oklch(0.55 0.13 30)",
+  "connectors": [
+    {
+      "id": "browser",
+      "label": "Shared browser sign-in",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 2,
+    "max": 5
+  },
+  "adds": {
+    "crons": [
+      "Profile refresh (weekly)"
+    ],
+    "apps": []
+  }
+}

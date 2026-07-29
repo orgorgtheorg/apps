@@ -1,0 +1,27 @@
+{
+  "appId": "repo-engineer",
+  "version": 1,
+  "name": "Repo engineer",
+  "tagline": "A persistent engineer on a persistent repo — ships PRs, won't ghost.",
+  "who": "A team that needs recurring engineering work done without babysitting.",
+  "how": "Clones your repo once and keeps it; takes issues to reviewed PRs with tests run, deploy previews, and an honest paper trail in git.",
+  "category": "build",
+  "accent": "oklch(0.55 0.13 170)",
+  "connectors": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "required": true
+    }
+  ],
+  "setupMinutes": {
+    "min": 4,
+    "max": 8
+  },
+  "adds": {
+    "crons": [],
+    "apps": [
+      "Dev console"
+    ]
+  }
+}
