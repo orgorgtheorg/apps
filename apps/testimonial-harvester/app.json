@@ -1,0 +1,37 @@
+{
+  "appId": "testimonial-harvester",
+  "version": 1,
+  "name": "Testimonial harvester",
+  "tagline": "Ask every happy customer for a review — exactly once.",
+  "who": "A dentist or home-services owner who knows reviews matter but never asks.",
+  "how": "After a completed job or appointment, drafts a personal review-request text or email with your Google link, and tracks who was asked so nobody gets asked twice.",
+  "category": "growth",
+  "accent": "oklch(0.55 0.13 30)",
+  "connectors": [
+    {
+      "id": "gmail",
+      "label": "Gmail",
+      "required": false
+    },
+    {
+      "id": "google-calendar",
+      "label": "Google Calendar",
+      "required": false
+    },
+    {
+      "id": "twilio",
+      "label": "SMS (Twilio)",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 4,
+    "max": 7
+  },
+  "adds": {
+    "crons": [
+      "Post-job check (daily)"
+    ],
+    "apps": []
+  }
+}

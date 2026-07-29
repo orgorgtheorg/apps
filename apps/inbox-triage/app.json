@@ -1,0 +1,29 @@
+{
+  "appId": "inbox-triage",
+  "version": 1,
+  "name": "Inbox triage",
+  "tagline": "Wake up to a categorized inbox and the three emails that need you.",
+  "who": "An owner drowning in a mixed inbox of leads, invoices, and noise.",
+  "how": "Categorizes new mail, drafts routine replies for approval, and surfaces the few messages that genuinely need a human decision. Draft-only by default.",
+  "category": "operations",
+  "accent": "oklch(0.55 0.13 200)",
+  "connectors": [
+    {
+      "id": "gmail",
+      "label": "Gmail",
+      "required": true
+    }
+  ],
+  "setupMinutes": {
+    "min": 4,
+    "max": 8
+  },
+  "adds": {
+    "crons": [
+      "Triage pass (frequent)"
+    ],
+    "apps": [
+      "Response queue"
+    ]
+  }
+}

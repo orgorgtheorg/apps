@@ -1,0 +1,28 @@
+{
+  "appId": "spend-anomaly-watch",
+  "version": 1,
+  "name": "Spend anomaly watch",
+  "tagline": "New vendors, duplicate charges, and creeping subscriptions — flagged.",
+  "who": "An ops manager at a 20-person company where nobody reads the bank feed.",
+  "how": "Rides the live bank mirror: new vendor, duplicate charge, grown subscription, or upcoming annual renewal triggers an alert with the transaction linked; a weekly digest covers the rest.",
+  "category": "operations",
+  "accent": "oklch(0.50 0.13 320)",
+  "connectors": [
+    {
+      "id": "bank",
+      "label": "Bank (Mercury / Brex)",
+      "required": true
+    }
+  ],
+  "setupMinutes": {
+    "min": 4,
+    "max": 7
+  },
+  "adds": {
+    "crons": [
+      "Anomaly scan (daily)",
+      "Digest (Mon 8am)"
+    ],
+    "apps": []
+  }
+}

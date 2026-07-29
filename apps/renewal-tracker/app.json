@@ -1,0 +1,27 @@
+{
+  "appId": "renewal-tracker",
+  "version": 1,
+  "name": "Contract & renewal tracker",
+  "tagline": "Never miss a lease, insurance, or vendor renewal window again.",
+  "who": "Any owner — missing a lease auto-renewal notice window costs real money.",
+  "how": "Drop contracts into Files; renewal and termination-notice dates are extracted into the calendar and a registry doc, with warnings at 60 and 30 days.",
+  "category": "operations",
+  "accent": "oklch(0.55 0.13 200)",
+  "connectors": [
+    {
+      "id": "google-calendar",
+      "label": "Google Calendar",
+      "required": false
+    }
+  ],
+  "setupMinutes": {
+    "min": 2,
+    "max": 5
+  },
+  "adds": {
+    "crons": [
+      "Deadline check (daily)"
+    ],
+    "apps": []
+  }
+}

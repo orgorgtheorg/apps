@@ -1,0 +1,23 @@
+{
+  "appId": "competitor-brief",
+  "version": 1,
+  "name": "Competitor brief",
+  "tagline": "Know what your competitors changed — every Monday morning.",
+  "who": "A studio owner or startup founder who competes on price and offering.",
+  "how": "Monday cron diffs competitor sites, pricing pages, business profiles, and careers pages into a one-page \"what changed, what to consider\" brief.",
+  "category": "growth",
+  "accent": "oklch(0.50 0.13 250)",
+  "connectors": [],
+  "setupMinutes": {
+    "min": 3,
+    "max": 6
+  },
+  "adds": {
+    "crons": [
+      "Brief (Mon 8am)"
+    ],
+    "apps": [
+      "Watchtower"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "appId": "website-watchdog",
+  "version": 1,
+  "name": "Website watchdog",
+  "tagline": "Know your site broke before your customers tell you.",
+  "who": "Anyone whose site quietly earns them money.",
+  "how": "Cron pings the site, screenshots key pages, diffs against the last known-good, and alerts on breakage or unexpected content drift.",
+  "category": "build",
+  "accent": "oklch(0.50 0.13 280)",
+  "connectors": [],
+  "setupMinutes": {
+    "min": 2,
+    "max": 4
+  },
+  "adds": {
+    "crons": [
+      "Health check (hourly)"
+    ],
+    "apps": []
+  }
+}
