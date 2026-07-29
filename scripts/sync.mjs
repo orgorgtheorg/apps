@@ -102,7 +102,20 @@ for (const id of ids) {
   if (packaged && !existsSync(join(APPS_DIR, id, "SKILL.md"))) {
     fail(`apps/${id}/ is packaged (has INSTALL.md) but has no SKILL.md`);
   }
-  apps.push({ ...manifest, packaged });
+  // Artwork is convention, not manifest fields: icon.png + screenshots/*.
+  // Relative paths here; the sync phase turns them into raw.githubusercontent
+  // URLs pinned at the synced commit.
+  const iconPath = existsSync(join(APPS_DIR, id, "icon.png"))
+    ? `apps/${id}/icon.png`
+    : null;
+  const shotsDir = join(APPS_DIR, id, "screenshots");
+  const screenshotPaths = existsSync(shotsDir)
+    ? readdirSync(shotsDir)
+        .filter((f) => /\.(png|jpe?g|webp)$/i.test(f))
+        .sort()
+        .map((f) => `apps/${id}/screenshots/${f}`)
+    : [];
+  apps.push({ ...manifest, packaged, iconPath, screenshotPaths });
 }
 
 if (process.exitCode) {
@@ -110,7 +123,7 @@ if (process.exitCode) {
   process.exit(1);
 }
 console.log(
-  `✔ ${apps.length} manifests valid (${apps.filter((a) => a.packaged).length} packaged)`,
+  `✔ ${apps.length} manifests valid (${apps.filter((a) => a.packaged).length} packaged, ${apps.filter((a) => a.iconPath).length} with icons)`,
 );
 
 if (process.argv.includes("--check")) {
@@ -130,7 +143,16 @@ const repo =
     .replace(/\.git$/, "");
 const commitSha = process.env.GITHUB_SHA ?? git("rev-parse", "HEAD");
 
-const payload = JSON.stringify({ repo, commitSha, apps });
+const raw = (path) =>
+  `https://raw.githubusercontent.com/${repo}/${commitSha}/${path}`;
+const payloadApps = apps.map(({ iconPath, screenshotPaths, ...app }) => ({
+  ...app,
+  ...(iconPath ? { iconUrl: raw(iconPath) } : {}),
+  ...(screenshotPaths.length > 0
+    ? { screenshotUrls: screenshotPaths.map(raw) }
+    : {}),
+}));
+const payload = JSON.stringify({ repo, commitSha, apps: payloadApps });
 console.log(
   `Syncing ${apps.length} apps @ ${commitSha.slice(0, 10)} (${repo})…`,
 );
