@@ -1,6 +1,6 @@
 {
   "appId": "candidate-tracker",
-  "version": 1,
+  "version": 2,
   "name": "Candidate tracker",
   "tagline": "A lightweight hiring pipeline that nags before candidates go cold.",
   "who": "A hiring manager juggling six candidates across three stages for two weeks.",
