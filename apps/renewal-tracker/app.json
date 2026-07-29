@@ -22,6 +22,8 @@
     "crons": [
       "Deadline check (daily)"
     ],
-    "apps": []
+    "apps": [
+      "Registry"
+    ]
   }
 }

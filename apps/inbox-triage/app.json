@@ -20,7 +20,8 @@
   },
   "adds": {
     "crons": [
-      "Triage pass (frequent)"
+      "Triage pass (every 30 min)",
+      "Digest (7am)"
     ],
     "apps": [
       "Response queue"

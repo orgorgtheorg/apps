@@ -25,10 +25,10 @@
   },
   "adds": {
     "crons": [
-      "Follow-up sweep (daily)"
+      "Follow-up sweep (weekdays)"
     ],
     "apps": [
-      "Investor CRM"
+      "Investor pipeline"
     ]
   }
 }

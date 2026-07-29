@@ -1,6 +1,6 @@
 {
   "appId": "bookkeeping-tidy",
-  "version": 1,
+  "version": 2,
   "name": "Pre-close bookkeeping tidy",
   "tagline": "Month-end close becomes review, not archaeology.",
   "who": "An owner whose accountant bills hourly for cleanup.",
@@ -27,6 +27,8 @@
     "crons": [
       "Tidy pass (weekly)"
     ],
-    "apps": []
+    "apps": [
+      "Close checklist"
+    ]
   }
 }

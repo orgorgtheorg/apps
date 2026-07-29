@@ -1,6 +1,6 @@
 {
   "appId": "proposal-builder",
-  "version": 1,
+  "version": 2,
   "name": "Proposal & quote builder",
   "tagline": "A branded, correctly-priced proposal PDF in two minutes.",
   "who": "A landscaper quoting a commercial property — today it is 90 minutes of copy-pasting last quote in Word.",
@@ -14,6 +14,8 @@
   },
   "adds": {
     "crons": [],
-    "apps": []
+    "apps": [
+      "Price book"
+    ]
   }
 }

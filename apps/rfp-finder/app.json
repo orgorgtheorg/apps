@@ -20,8 +20,10 @@
   },
   "adds": {
     "crons": [
-      "Portal sweep (daily)"
+      "Portal sweep (weekdays)"
     ],
-    "apps": []
+    "apps": [
+      "Solicitations"
+    ]
   }
 }

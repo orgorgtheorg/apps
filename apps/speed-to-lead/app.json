@@ -25,10 +25,10 @@
   },
   "adds": {
     "crons": [
-      "Inbox watch (frequent)"
+      "Inbox watch (every 10 min)"
     ],
     "apps": [
-      "Deal board"
+      "Leads inbox"
     ]
   }
 }

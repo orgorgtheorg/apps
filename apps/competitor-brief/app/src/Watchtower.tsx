@@ -145,7 +145,7 @@ function CompetitorCard({ competitor }: { competitor: Doc<"competitors"> }) {
 
       {competitor.screenshotPath ? (
         <img
-          src={`sandbox:${competitor.screenshotPath}`}
+          src={competitor.screenshotPath}
           alt={`Latest screenshot of ${competitor.name}'s homepage`}
           className="h-28 w-full rounded border border-border/60 object-cover object-top"
         />

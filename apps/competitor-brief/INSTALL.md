@@ -56,11 +56,13 @@ For each competitor from step 1:
 cd /workspace/app && npx convex run watchtower:addCompetitor '{"name":"…","siteUrl":"https://…","pricingUrl":"https://…","careersUrl":"https://…"}'
 ```
 
-Then, for each: open the site in the browser, screenshot the homepage to `/workspace/watchtower/<slug>/<date>.png`, save the page text to `/workspace/watchtower/<slug>/<date>.txt`, extract any visible price points, and call `watchtower:recordCheck` with the screenshot path and price points (**no** `changeSummary` — this is the baseline, not a change).
+Then, for each: open the site in the browser, screenshot the homepage into the app's own public folder so the grid can display it, save the page text alongside it, extract any visible price points, and call `watchtower:recordCheck` (**no** `changeSummary` — this is the baseline, not a change).
 
 ```bash
-mkdir -p /workspace/watchtower
+mkdir -p /workspace/watchtower /workspace/app/public/watchtower
 ```
+
+Screenshots go to `/workspace/app/public/watchtower/<slug>/<date>.png`, and `screenshotPath` is the **web** path — `/watchtower/<slug>/<date>.png` — because the app serves its own `public/` directory. Page text stays in `/workspace/watchtower/<slug>/<date>.txt`.
 
 ## 6. Monday brief (cron)
 
@@ -73,7 +75,7 @@ Merge into `/workspace/.orgorg/crons.json` (create as `{"crons": []}` if missing
   "days": ["Mon"],
   "time": "08:00",
   "enabled": true,
-  "prompt": "Competitor Monday brief. Read /workspace/apps/competitor-brief/SKILL.md. For each row from `cd /workspace/app && npx convex run watchtower:competitors`: fetch the site, pricing page, careers page and business profile; screenshot into /workspace/watchtower/<slug>/<date>.png; diff text and prices against the previous capture; call watchtower:recordCheck (with changeSummary ONLY when something actually changed). Then write one doc artifact 'Competitor brief — <week of>': per competitor what changed, what it means, and what to consider, with before/after screenshot pairs for visual changes and hiring inferences clearly labeled as inference. Save it with watchtower:saveBrief and post two lines in chat with the doc link. If nothing changed anywhere, the brief and the chat line are one honest sentence each — never pad."
+  "prompt": "Competitor Monday brief. Read /workspace/apps/competitor-brief/SKILL.md. For each row from `cd /workspace/app && npx convex run watchtower:competitors`: fetch the site, pricing page, careers page and business profile; screenshot into /workspace/app/public/watchtower/<slug>/<date>.png and pass screenshotPath as the web path '/watchtower/<slug>/<date>.png'; diff text and prices against the previous capture; call watchtower:recordCheck (with changeSummary ONLY when something actually changed). Then write one doc artifact 'Competitor brief — <week of>': per competitor what changed, what it means, and what to consider, with before/after screenshot pairs for visual changes and hiring inferences clearly labeled as inference. Save it with watchtower:saveBrief and post two lines in chat with the doc link. If nothing changed anywhere, the brief and the chat line are one honest sentence each — never pad."
 }
 ```
 
@@ -93,7 +95,8 @@ Append to `/workspace/installed_apps.json` (create as `{"apps": []}` if missing;
     "/workspace/app/convex/watchtowerTables.ts",
     "/workspace/app/src/Watchtower.tsx",
     "/workspace/app/convex/schema.ts (+watchtowerTables spread)",
-    "/workspace/watchtower/"
+    "/workspace/watchtower/",
+    "/workspace/app/public/watchtower/"
   ],
   "crons": ["competitor-monday-brief"],
   "artifacts": ["watchtower"]

@@ -25,7 +25,8 @@
   },
   "adds": {
     "crons": [
-      "Prep pass (nightly)"
+      "Prep pass (nightly)",
+      "Morning post (7am)"
     ],
     "apps": []
   }

@@ -19,7 +19,9 @@
     "max": 4
   },
   "adds": {
-    "crons": [],
+    "crons": [
+      "Commitment check (weekdays)"
+    ],
     "apps": []
   }
 }

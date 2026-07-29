@@ -277,12 +277,12 @@ function Quotes({ quotes }: { quotes: Doc<"quotes">[] | undefined }) {
 
           <div className="mt-2 flex flex-wrap items-center gap-2">
             {q.pdfPath && (
-              <a
-                className="text-xs underline underline-offset-2 hover:text-foreground"
-                href={`sandbox:${q.pdfPath}`}
+              <span
+                className="text-xs text-muted-foreground"
+                title={q.pdfPath}
               >
-                PDF
-              </a>
+                PDF in Files
+              </span>
             )}
             {(["sent", "won", "lost"] as const).map((s) => (
               <Button

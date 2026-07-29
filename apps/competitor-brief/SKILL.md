@@ -7,13 +7,13 @@ description: Diff competitors' sites, pricing, business profiles, and careers pa
 
 The job: the user knows what their competitors changed before their customers do — in one page, once a week, with no padding.
 
-Surface: the **Watchtower** artifact tab (`competitors`, `competitor_briefs`). Captures: `/workspace/watchtower/<slug>/`.
+Surface: the **Watchtower** artifact tab (`competitors`, `competitor_briefs`). Page text: `/workspace/watchtower/<slug>/`. Screenshots: `/workspace/app/public/watchtower/<slug>/` — stored as web paths (`/watchtower/<slug>/<date>.png`) so the grid can render them.
 
 ```bash
 cd /workspace/app
 npx convex run watchtower:competitors
 npx convex run watchtower:addCompetitor '{"name":"Fenmore","siteUrl":"https://…","pricingUrl":"https://…"}'
-npx convex run watchtower:recordCheck '{"id":"<_id>","screenshotPath":"/workspace/watchtower/fenmore/2026-07-27.png","pricePoints":[{"label":"Starter","value":"$49/mo"}],"changeSummary":"Starter went $39 → $49"}'
+npx convex run watchtower:recordCheck '{"id":"<_id>","screenshotPath":"/watchtower/fenmore/2026-07-27.png","pricePoints":[{"label":"Starter","value":"$49/mo"}],"changeSummary":"Starter went $39 → $49"}'
 npx convex run watchtower:saveBrief '{"weekOf":"2026-07-27","summary":"Two price rises, one new landing page.","changeCount":3}'
 ```
 

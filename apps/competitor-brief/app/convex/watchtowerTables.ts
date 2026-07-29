@@ -13,7 +13,9 @@ export const watchtowerTables = {
     careersUrl: v.optional(v.string()),
     gbpUrl: v.optional(v.string()),
 
-    // Latest screenshot in the sandbox (/workspace/watchtower/<slug>/…).
+    // Web path to the latest screenshot, served by the app itself:
+    // the file lives at /workspace/app/public/watchtower/<slug>/<date>.png and
+    // this field holds "/watchtower/<slug>/<date>.png" so the grid can show it.
     screenshotPath: v.optional(v.string()),
     previousScreenshotPath: v.optional(v.string()),
 
