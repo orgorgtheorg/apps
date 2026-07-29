@@ -15,6 +15,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install convex CLI
+        run: npm install --no-audit --no-fund
+
       - name: Validate manifests
         run: node scripts/sync.mjs --check
 
